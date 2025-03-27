@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script
+  src='//in.fw-cdn.com/32321363/1256648.js'
+  chat='true'>
+  </script>
+  <title>Dummy Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      color: #1f2937;
+      box-sizing: border-box;
+    }
+    .navbar {
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #1f2937;
+      transition: color 0.3s;
+    }
+    .navbar a:hover {
+      color: #3b82f6;
+    }
+    .hero {
+      background: #3b82f6;
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #3b82f6;
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background: #2563eb;
+    }
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1f2937;
+      color: white;
+    }
+  </style>
+    <script
+    src='//in.fw-cdn.com/32321363/1256648.js'
+    chat='true'>
+    </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>Dummy Website</h1>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h2>Welcome to Dummy Website</h2>
+    <p>A simple, clean design for your next project.</p>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content" id="content"></div>
+
+  <!-- Footer -->
+  <div class="footer">
+    &copy; 2025 Dummy Website. All rights reserved.
+  </div>
+
+  <script>
+    const content = document.getElementById('content');
+    for (let i = 1; i <= 3; i++) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <h3>Card ${i}</h3>
+        <p>Some placeholder content for card ${i}. Feel free to customize!</p>
+        <a href="#" class="button">Learn More</a>
+      `;
+      content.appendChild(card);
+    }
+  </script>
+
+</body>
+</html>
