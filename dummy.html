@@ -77,13 +77,71 @@
       background: #1f2937;
       color: white;
     }
+      .chat-prompt {
+  position: fixed;
+  bottom: 80px; /* Adjust to be above the chat icon */
+  right: 90px; /* Adjust to point to Freshchat icon */
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  animation: fadeIn 0.5s, fadeOut 0.5s 4.5s forwards; /* 5-second visibility */
+  z-index: 9999;
+  cursor: pointer;
+}
+
+/* Speech bubble arrow */
+.chat-prompt-arrow {
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #007bff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
   </style>
     <script
     src='//in.fw-cdn.com/32321363/1256648.js'
     chat='true'>
+      window.onload = function() {
+  const prompt = document.getElementById('chatPrompt');
+
+  // Hide the prompt after 5 seconds
+  setTimeout(() => {
+    if (prompt) {
+      prompt.style.display = 'none';
+    }
+  }, 5000);
+
+  // Allow click to open Freshchat
+  prompt.addEventListener('click', function() {
+    if (window.fcWidget) {
+      window.fcWidget.open();
+    }
+  });
+};
     </script>
 </head>
 <body>
+   <div id="chatPrompt" class="chat-prompt">
+    Chat with our AI Assistant!
+    <div class="chat-prompt-arrow"></div>
+  </div>
   <!-- Navbar -->
   <div class="navbar">
     <h1>Dummy Website</h1>
